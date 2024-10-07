@@ -4,14 +4,19 @@ import math
 
 
 def dissipated_power(voltage, resistance):
-	# TODO: Calculer la puissance dissipée par la résistance.
-	return 0
+	power = voltage**2/resistance
+	return power
 
 def orthogonal(v1, v2):
 	# TODO: Retourner vrai si les vecteurs sont orthogonaux, faux sinon.
+	if v1[0]*v2[0] + v1[1]*v2[1] == 0:
+		return True
+	
+	else:
+		return False
 	# v1[0] et v2[0] pour accéder au X
 	# v1[1] et v2[1] pour accéder au Y
-	pass
+	
 
 def point_in_circle(point, circle_center, circle_radius):
 	# TODO: Retourner vrai si le point est à l'intérieur du cercle, faux sinon.
