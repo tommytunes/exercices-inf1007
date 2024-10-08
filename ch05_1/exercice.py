@@ -2,24 +2,54 @@
 # -*- coding: utf-8 -*-
 
 from typing import List
-
+import math
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    number = (number)**2
+    number = math.sqrt(number)
+    return number
 
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
 
-    return [""]
+    liste = prefixes.replace("", " ")
+    liste.split(" ")
+    liste = prefixes.replace(" ", "")
+    nouveau_nom = []
+
+    for elem in liste:
+        nouveau_nom.append(elem + suffixe)
+
+
+    return nouveau_nom
 
 
 def prime_integer_summation() -> int:
-    return 0
+
+    num = 1
+    somme = 0
+    count = 0
+
+    while True:
+        if num / num == 1 and num / 1 == num:
+            somme += num
+            count += 1
+
+        if count == 100:
+            break
+        
+        
+        num += 1
+    return somme
 
 
 def factorial(number: int) -> int:
-    return 0
+    fact = 1
+    for x in range(2, number + 1):
+        fact *= x
+
+    return fact
 
 
 def use_continue() -> None:
@@ -27,7 +57,23 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    acceptance = []
+    for group in groups:
+        if 25 in group:
+            acceptance.append(True)
+            continue
+        if min(group) < 18:
+            acceptance.append(False)
+            continue
+        if len(group) > 10 and len(group) <= 3:
+            acceptance.append(False)
+            continue
+        if min(group) < 18 or max(group) > 70 and group == 50:
+            acceptance.append(False)
+            continue
+        else:
+            acceptance.append(True)
+    return acceptance
 
 
 def main() -> None:
